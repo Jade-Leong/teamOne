@@ -1,3 +1,5 @@
+//authorization / authn
+
 const supabaseUrl = "https://rkqcnibvsvbjxdwjklim.supabase.co";
 const supabaseAnonKey = "sb_publishable_08eKwdrsBXZWTzvH04hzJg_G6Z-ZgnV";
 
@@ -42,7 +44,6 @@ async function goPlay() {
   const mapLabel    = selectedBtn ? selectedBtn.textContent.trim() : 'Map 1';
   currentMapId      = mapLabel === 'Map 2' ? 2 : 1;
 
-  // ✅ No insert here — just go to the game
   showScreen('game');
 }
 
@@ -60,3 +61,7 @@ async function saveRun(stats) {
 
   if (error) console.error('Failed to save run:', error.message);
 }
+
+async function login(){
+
+};
