@@ -74,7 +74,7 @@ async function goSignUp() {
     return;
   }
 
-  showScreen('game');
+  showScreen('mapselect');
 }
 
 async function goSignIn() {
@@ -94,7 +94,7 @@ async function goSignIn() {
   }
 
   currentUserId = data.user?.id;
-  showScreen('game');
+  showScreen('mapselect');
 }
 
 //we will run this when the game ends
