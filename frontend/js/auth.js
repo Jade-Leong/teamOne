@@ -10,6 +10,8 @@ console.log("script.js loaded");
 let currentUserId = null;
 let currentMapId = null;
 
+/**
+ * 
 async function goPlay() {
   const email    = document.getElementById('username').value.trim();
   const password = document.getElementById('password').value.trim();
@@ -44,6 +46,54 @@ async function goPlay() {
   const mapLabel    = selectedBtn ? selectedBtn.textContent.trim() : 'Map 1';
   currentMapId      = mapLabel === 'Map 2' ? 2 : 1;
 
+  showScreen('game');
+}
+ * 
+ */
+
+async function goSignUp() {
+  const email    = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value.trim();
+
+  if (!email || !password) {
+    alert('Please enter your email and password.');
+    return;
+  }
+
+  const { data, error } = await supabaseClient.auth.signUp({ email, password });
+
+  if (error) {
+    alert('Sign up error: ' + error.message);
+    return;
+  }
+
+  currentUserId = data.user?.id;
+
+  if (!currentUserId) {
+    alert('Sign up succeeded but could not get user ID. Check your email to confirm your account.');
+    return;
+  }
+
+  showScreen('game');
+}
+
+async function goSignIn() {
+  const email    = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value.trim();
+
+  if (!email || !password) {
+    alert('Please enter your email and password.');
+    return;
+  }
+
+  const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+
+  if (error) {
+    alert('Sign in error: ' + error.message);
+    return;
+  }
+
+  currentUserId = data.user?.id;
   showScreen('game');
 }
 
