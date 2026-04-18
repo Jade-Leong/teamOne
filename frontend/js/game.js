@@ -8,7 +8,7 @@ function startGame(mapId) {
   showScreen('game');
 
   const frame = document.getElementById('godot-frame');
-  frame.src = `godot/index.html?map=${mapId}`;
+  frame.src = 'godot/bobcatgo.html?map=' + mapId;
 }
 
 function exitGame() {
