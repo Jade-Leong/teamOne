@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bqdkksgekschg"]
+
+[ext_resource type="Script" uid="uid://dkmoo3m0gsn8b" path="res://scenes/game_over.gd" id="1_xeevv"]
+
+[node name="Control" type="Control" unique_id=1239734459]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_xeevv")
+
+[node name="Label" type="Label" parent="." unique_id=150110472]
+layout_mode = 0
+offset_left = 698.0
+offset_top = 237.0
+offset_right = 791.0
+offset_bottom = 263.0
+text = "Game Over"
+
+[node name="Button" type="Button" parent="." unique_id=1640859154]
+layout_mode = 0
+offset_left = 573.0
+offset_top = 327.0
+offset_right = 915.0
+offset_bottom = 421.0
+text = "Play Again"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

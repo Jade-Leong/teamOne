@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c0gsfptuh2dd8"]
+
+[ext_resource type="Script" uid="uid://dh566cq3xxnqy" path="res://scenes/obstacle_taxi.gd" id="1_amntr"]
+[ext_resource type="Texture2D" uid="uid://cnl6i85jjk710" path="res://assets/Sprites/Taxi.png" id="1_axm7e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5sy4"]
+size = Vector2(335.25, 138.25)
+
+[node name="Obstable_Taxi" type="StaticBody2D" unique_id=859467812 groups=["obstacle"]]
+script = ExtResource("1_amntr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=928189622]
+position = Vector2(1261.25, 521.25)
+scale = Vector2(0.7370001, 0.74100006)
+texture = ExtResource("1_axm7e")
+
+[node name="Taxi" type="CollisionShape2D" parent="." unique_id=1211116797]
+position = Vector2(1252.625, 504.125)
+shape = SubResource("RectangleShape2D_u5sy4")

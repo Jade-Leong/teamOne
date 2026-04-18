@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://vornvv4om6dd"]
+
+[ext_resource type="Script" uid="uid://b5mo1y132ja8a" path="res://scenes/obstacle_pigeon.gd" id="1_0fdnf"]
+[ext_resource type="Texture2D" uid="uid://brwr4j1u2brf1" path="res://assets/Sprites/Pigeons.png" id="1_4y6en"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p57ef"]
+size = Vector2(237.5, 97.500015)
+
+[node name="Obstacle_Pigeon" type="StaticBody2D" unique_id=536620988 groups=["obstacle"]]
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("1_0fdnf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=125919745]
+position = Vector2(798.2499, 169.74997)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_p57ef")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1153396570]
+position = Vector2(801.37506, 186.25002)
+scale = Vector2(0.5695002, 0.53499997)
+texture = ExtResource("1_4y6en")

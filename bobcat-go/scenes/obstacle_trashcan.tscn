@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://r0ebqoygpc4t"]
+
+[ext_resource type="Script" uid="uid://b0dfcmoyhit8m" path="res://scenes/obstacle_trashcan.gd" id="1_ewt7y"]
+[ext_resource type="Texture2D" uid="uid://c7vxxbwlsm50g" path="res://assets/Sprites/trash.png" id="1_eywcf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
+size = Vector2(85.50005, 116.49998)
+
+[node name="Obstacle_TrashCan" type="StaticBody2D" unique_id=1925250565 groups=["obstacle"]]
+scale = Vector2(0.9999998, 0.9999998)
+script = ExtResource("1_ewt7y")
+
+[node name="TrashCan" type="Sprite2D" parent="." unique_id=1109251850]
+position = Vector2(-336.0001, 227.00003)
+scale = Vector2(0.4260002, 0.43799996)
+texture = ExtResource("1_eywcf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=871181928]
+position = Vector2(-340.75, 217.75003)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_iywne")
