@@ -7,6 +7,11 @@ function showScreen(id) {
   document.getElementById(id).classList.add('active');
 }
 
+function startGame(mapId) {
+  currentMapId = mapId;
+  showScreen('game');
+}
+
 function selectMap(btn) {
   document.querySelectorAll('.map-btn').forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
@@ -29,4 +34,8 @@ function updateLeaderboard() {
   if (!found && rows.length > 0) {
     rows[rows.length - 1].querySelector('div').textContent = currentUser;
   }
+}
+
+function goBack() {
+  showScreen('mapselect');
 }

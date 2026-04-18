@@ -67,7 +67,7 @@
     <!-- GAME PLACEHOLDER -->
     <div id="game" class="screen">
       <p>[ game screen ]<br />coming soon</p>
-      <button class="back-btn-game" onclick="showScreen('landing')">Back</button>
+      <button class="back-btn-game" onclick="showScreen('mapselect')">Back</button>
     </div>
 
     <!-- LEADERBOARD -->
@@ -120,6 +120,24 @@
         </div>
       </div>
     </div>
+
+    <!-- MAP SELECT -->
+  <div id="mapselect" class="screen">
+    <div class="top-bar">
+      <button class="back-btn" onclick="showScreen('landing')">Back</button>
+    </div>
+    <h1>Select a Map</h1>
+    <div class="map-select-grid">
+      <button class="map-card" onclick="startGame(1)">
+        <div class="map-placeholder">Map 1</div>
+        <span class="map-label">World 1</span>
+      </button>
+      <button class="map-card" onclick="startGame(2)">
+        <div class="map-placeholder">Map 2</div>
+        <span class="map-label">World 2</span>
+      </button>
+    </div>
+  </div>
   </main>
 
 
