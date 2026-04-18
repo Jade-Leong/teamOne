@@ -65,9 +65,31 @@
     </div>
 
     <!-- GAME PLACEHOLDER -->
-    <div id="game" class="screen">
+    <!--<div id="game" class="screen">
       <p>[ game screen ]<br />coming soon</p>
+
       <button class="back-btn-game" onclick="showScreen('mapselect')">Back</button>
+    </div>
+    -->
+
+     <!-- GAME SCREEN -->
+    <div id="game" class="screen">
+      <div class="top-bar">
+        <button class="back-btn" onclick="exitGame()">Back</button>
+      </div>
+
+      <h1>Bobcat Go!</h1>
+
+      <div id="game-container">
+        <iframe
+          id="godot-frame"
+          src=""
+          width="960"
+          height="540"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+      </div>
     </div>
 
     <!-- LEADERBOARD -->

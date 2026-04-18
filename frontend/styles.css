@@ -453,3 +453,21 @@
   font-size: 11px;
   color: #fff;
 }
+
+main {
+  position: relative;
+}
+
+.screen {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.screen.active {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+}
