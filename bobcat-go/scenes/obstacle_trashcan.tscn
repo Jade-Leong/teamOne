@@ -11,11 +11,11 @@ scale = Vector2(0.9999998, 0.9999998)
 script = ExtResource("1_ewt7y")
 
 [node name="TrashCan" type="Sprite2D" parent="." unique_id=1109251850]
-position = Vector2(-336.0001, 227.00003)
+position = Vector2(294.00003, 291.00006)
 scale = Vector2(0.4260002, 0.43799996)
 texture = ExtResource("1_eywcf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=871181928]
-position = Vector2(-340.75, 217.75003)
+position = Vector2(291, 296.00006)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_iywne")

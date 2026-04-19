@@ -1,9 +1,9 @@
 extends StaticBody2D
 
-@export var scroll_speed: float = 400.0  # match your background speed
+@export var scroll_speed: float = 200.0
 
 func _process(delta: float) -> void:
 	position.x -= scroll_speed * delta
-	# delete when off the left side of screen
-	if position.x < -200:
+	print("taxi x: ", position.x)
+	if position.x < -2000:
 		queue_free()

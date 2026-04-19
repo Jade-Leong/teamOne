@@ -1,19 +1,20 @@
-[gd_scene format=3 uid="uid://c0gsfptuh2dd8"]
+[gd_scene format=3 uid="uid://d1njxit8h8380"]
 
-[ext_resource type="Script" uid="uid://dh566cq3xxnqy" path="res://scenes/obstacle_taxi.gd" id="1_amntr"]
+[ext_resource type="Script" uid="uid://ja2j1ja3eva3" path="res://scenes/obstacle_taxi.gd" id="1_amntr"]
 [ext_resource type="Texture2D" uid="uid://cnl6i85jjk710" path="res://assets/Sprites/Taxi.png" id="1_axm7e"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5sy4"]
-size = Vector2(335.25, 138.25)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qf82x"]
+size = Vector2(347, 143)
 
-[node name="Obstable_Taxi" type="StaticBody2D" unique_id=859467812 groups=["obstacle"]]
+[node name="obstacle_taxi" type="StaticBody2D" unique_id=2135296311 groups=["obstacle"]]
 script = ExtResource("1_amntr")
+scroll_speed = null
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=928189622]
-position = Vector2(1261.25, 521.25)
-scale = Vector2(0.7370001, 0.74100006)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=420526453]
+position = Vector2(1103, 521)
+scale = Vector2(0.796, 0.75)
 texture = ExtResource("1_axm7e")
 
-[node name="Taxi" type="CollisionShape2D" parent="." unique_id=1211116797]
-position = Vector2(1252.625, 504.125)
-shape = SubResource("RectangleShape2D_u5sy4")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=676247488]
+position = Vector2(1094.5, 506.5)
+shape = SubResource("RectangleShape2D_qf82x")

@@ -5,5 +5,5 @@ extends StaticBody2D
 func _process(delta: float) -> void:
 	position.x -= scroll_speed * delta
 	# delete when off the left side of screen
-	if position.x < -200:
+	if position.x < -300:
 		queue_free()
