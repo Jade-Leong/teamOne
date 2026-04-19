@@ -23,12 +23,12 @@ motion_mirroring = Vector2(1436, 0)
 script = ExtResource("2_lnu2h")
 
 [node name="City Background" type="Sprite2D" parent="ParallaxBackground/CityBackground" unique_id=1058074586]
-position = Vector2(-2, 8)
+position = Vector2(-2, 12)
 texture = ExtResource("3_lnu2h")
 centered = false
 
 [node name="City Background2" type="Sprite2D" parent="ParallaxBackground/CityBackground" unique_id=1062557208]
-position = Vector2(2, 12)
+position = Vector2(12, 12)
 texture = ExtResource("3_lnu2h")
 centered = false
 offset = Vector2(1436, 0)

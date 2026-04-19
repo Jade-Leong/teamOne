@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@export var scroll_speed: float = 200.0
+@export var scroll_speed: float = 400.0
 
 func _process(delta: float) -> void:
 	position.x -= scroll_speed * delta

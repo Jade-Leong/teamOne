@@ -3,17 +3,17 @@ extends Node2D
 const OBSTACLES = [
 	preload("res://scenes/obstacle_trashcan.tscn"),
 	preload("res://scenes/obstacle_pigeon.tscn"),
-	preload("res://scenes/obstacle_taxi.tscn"),
 ]
 
 @export var spawn_x: float = 1400.0
-var spawn_positions = [235.0, -100, 0]  # trashcan, pigeon, taxi
+var spawn_positions = [235.0, -70]  # trashcan, pigeon
+
 var timer: float = 1.9
-var spawn_interval: float = 1.5
+var spawn_interval: float = 2.0
 
 func _process(delta: float) -> void:
 	timer += delta
-	spawn_interval = max(0.4, spawn_interval - delta * 0.02)  # was 0.8 and 0.01
+	spawn_interval = max(0.4, spawn_interval - delta * 0.02)
 	if timer >= spawn_interval:
 		timer = 0.0
 		spawn_obstacle()
