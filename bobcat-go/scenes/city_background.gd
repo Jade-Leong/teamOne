@@ -13,7 +13,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	current_speed = min(current_speed + acceleration * delta, max_speed)
 	scroll_x -= current_speed * delta
-	# Wrap within the mirroring width so it loops seamlessly
 	if motion_mirroring.x > 0:
 		scroll_x = fmod(scroll_x, motion_mirroring.x)
 	motion_offset.x = scroll_x
+
+func get_speed() -> float:
+	return current_speed
