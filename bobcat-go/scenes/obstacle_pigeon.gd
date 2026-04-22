@@ -1,9 +1,11 @@
 extends StaticBody2D
 
-@export var scroll_speed: float = 400.0  # match your background speed
+@onready var background_layer = get_tree().root.find_child("CityBackground", true, false)
 
 func _process(delta: float) -> void:
-	position.x -= scroll_speed * delta
-	# delete when off the left side of screen
-	if position.x < -500:
+	var speed: float = 500.0
+	if background_layer and background_layer.has_method("get_speed"):
+		speed = background_layer.get_speed()
+	position.x -= speed * delta
+	if position.x < -300:
 		queue_free()

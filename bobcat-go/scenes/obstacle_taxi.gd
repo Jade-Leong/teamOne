@@ -1,9 +1,11 @@
 extends StaticBody2D
 
-@export var scroll_speed: float = 400.0
+@onready var background_layer = get_tree().root.find_child("CityBackground", true, false)
 
 func _process(delta: float) -> void:
-	position.x -= scroll_speed * delta
-	print("taxi x: ", position.x)
+	var speed: float = 500.0
+	if background_layer and background_layer.has_method("get_speed"):
+		speed = background_layer.get_speed()
+	position.x -= speed * delta
 	if position.x < -2000:
 		queue_free()
