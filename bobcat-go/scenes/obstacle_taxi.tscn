@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d1njxit8h8380"]
 
 [ext_resource type="Script" uid="uid://ja2j1ja3eva3" path="res://scenes/obstacle_taxi.gd" id="1_amntr"]
-[ext_resource type="Texture2D" uid="uid://cnl6i85jjk710" path="res://assets/Sprites/Taxi.png" id="1_axm7e"]
+[ext_resource type="Texture2D" uid="uid://btpa7blhv8emy" path="res://assets/Sprites/Taxi_2.0.png" id="2_amntr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qf82x"]
 size = Vector2(347, 143)
@@ -10,10 +10,10 @@ size = Vector2(347, 143)
 script = ExtResource("1_amntr")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=420526453]
-position = Vector2(1103, 521)
-scale = Vector2(0.796, 0.75)
-texture = ExtResource("1_axm7e")
+position = Vector2(805, 290)
+scale = Vector2(0.35822725, 0.39453125)
+texture = ExtResource("2_amntr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=676247488]
-position = Vector2(1094.5, 506.5)
+position = Vector2(813, 326)
 shape = SubResource("RectangleShape2D_qf82x")
