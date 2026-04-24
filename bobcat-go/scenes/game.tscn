@@ -11,6 +11,7 @@ distance = -11.0
 [node name="Game" type="Node2D" unique_id=1708166018]
 position = Vector2(0, -8)
 script = ExtResource("1_u5sy4")
+spawn_x = null
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=562728589]
 layer = -1

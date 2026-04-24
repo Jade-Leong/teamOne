@@ -14,5 +14,5 @@ func _process(delta: float) -> void:
 	position.x -= speed * delta
 	
 	# Cleanup when off-screen
-	if position.x < -500: # Increased buffer to ensure it's fully off-screen
+	if position.x < -2000: # Increased buffer to ensure it's fully off-screen
 		queue_free()

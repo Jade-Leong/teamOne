@@ -11,18 +11,26 @@ script = ExtResource("1_xeevv")
 
 [node name="Label" type="Label" parent="." unique_id=150110472]
 layout_mode = 0
-offset_left = 698.0
-offset_top = 237.0
-offset_right = 791.0
-offset_bottom = 263.0
+offset_left = 573.0
+offset_top = 190.0
+offset_right = 921.0
+offset_bottom = 278.0
+theme_override_font_sizes/font_size = 54
 text = "Game Over"
+
+[node name="FinalTime" type="Label" parent="." unique_id=1149907871]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 48
 
 [node name="Button" type="Button" parent="." unique_id=1640859154]
 layout_mode = 0
-offset_left = 573.0
-offset_top = 327.0
-offset_right = 915.0
-offset_bottom = 421.0
+offset_left = 492.0
+offset_top = 275.0
+offset_right = 964.0
+offset_bottom = 427.0
+theme_override_font_sizes/font_size = 64
 text = "Play Again"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

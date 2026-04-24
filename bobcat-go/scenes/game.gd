@@ -26,12 +26,11 @@ func _process(delta: float) -> void:
 	if game_running:
 		elapsed_time += delta
 		score_label.text = "Time: " + format_time(elapsed_time)
-	
-	timer += delta
-	spawn_interval = max(0.4, spawn_interval - delta * 0.02)
-	if timer >= spawn_interval:
-		timer = 0.0
-		spawn_obstacle()
+		timer += delta
+		spawn_interval = max(0.4, spawn_interval - delta * 0.02)
+		if timer >= spawn_interval:
+			timer = 0.0
+			spawn_obstacle()
 
 func spawn_obstacle():
 	var random_index = randi() % OBSTACLES.size()
@@ -50,16 +49,14 @@ func format_time(time: float) -> String:
 func end_run():
 	if not game_running:
 		return
-
 	game_running = false
-
 	var duration_ms = int(elapsed_time * 1000)
 	var final_time = format_time(elapsed_time)
-
 	print("Run ended:", final_time)
+	
+	# save the time globally so game over screen can access it
+	GlobalData.final_time = final_time
 	
 	if OS.has_feature("web"):
 		JavaScriptBridge.eval("window.parent.postMessage({ type: 'bobcat-go:game-over', durationMs: %d }, '*');" % duration_ms)
-
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
-	

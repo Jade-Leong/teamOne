@@ -48,11 +48,11 @@ func _physics_process(delta: float) -> void:
 			die()
 			break
 
-func die() -> void:
+func die():
 	if is_dead:
 		return
-
 	is_dead = true
+	get_node("/root/Game").end_run()
 
 	var game = get_parent()
 	if game and game.has_method("end_run"):

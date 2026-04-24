@@ -1,21 +1,40 @@
 [gd_scene format=3 uid="uid://vornvv4om6dd"]
 
 [ext_resource type="Script" uid="uid://b5mo1y132ja8a" path="res://scenes/obstacle_pigeon.gd" id="1_0fdnf"]
-[ext_resource type="Texture2D" uid="uid://brwr4j1u2brf1" path="res://assets/Sprites/Pigeons.png" id="1_4y6en"]
+[ext_resource type="Texture2D" uid="uid://cmrogn7i5a25t" path="res://assets/Sprites/Pigeon_1.png" id="2_7jq5y"]
+[ext_resource type="Texture2D" uid="uid://cb8ew3eigy4f" path="res://assets/Sprites/Pigeon_2.png" id="3_tddo7"]
+[ext_resource type="Texture2D" uid="uid://djexq7upvld0t" path="res://assets/Sprites/Pigeon_3.png" id="4_p6g1j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p57ef"]
-size = Vector2(237.5, 97.500015)
+size = Vector2(137.50009, 142.37508)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v7vb3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7jq5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tddo7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p6g1j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="Obstacle_Pigeon" type="StaticBody2D" unique_id=536620988 groups=["obstacle"]]
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("1_0fdnf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=125919745]
-position = Vector2(798.2499, 169.74997)
-scale = Vector2(0.99999994, 0.99999994)
+position = Vector2(796.2499, 377.18747)
+scale = Vector2(0.9999997, 0.9999997)
 shape = SubResource("RectangleShape2D_p57ef")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1153396570]
-position = Vector2(801.37506, 186.25002)
-scale = Vector2(0.5695002, 0.53499997)
-texture = ExtResource("1_4y6en")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1343785475]
+position = Vector2(791.00006, 375.00003)
+scale = Vector2(0.35852507, 0.3316898)
+sprite_frames = SubResource("SpriteFrames_v7vb3")
