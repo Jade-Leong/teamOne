@@ -59,4 +59,4 @@ func end_run():
 	
 	if OS.has_feature("web"):
 		JavaScriptBridge.eval("window.parent.postMessage({ type: 'bobcat-go:game-over', durationMs: %d }, '*');" % duration_ms)
-	#get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
