@@ -30,17 +30,20 @@ window.addEventListener("message", async (event) => {
   const durationMs = event.data.durationMs;
   const finalTime = formatDuration(durationMs);
 
-  alert(`You lasted ${finalTime}`);
-
   await saveRun({
-    startedAt: currentRunStartedAt,
-    durationMs: durationMs,
-    mapId: currentMapId,
+  startedAt: currentRunStartedAt,
+  durationMs: durationMs,
+  mapId: currentMapId,
   });
+
+  frame.src = "";
+
+  showScreen("gameover");
 
 });
 
-function startGame(mapId) {
+
+window.startGame = function(mapId) {
   currentMapId = mapId;
   currentRunStartedAt = null;
   hasSavedCurrentRun = false;
@@ -68,3 +71,12 @@ function formatDuration(durationMs) {
 
   return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}.${String(milliseconds).padStart(2, "0")}`;
 }
+
+window.restartGame = function() {
+  if (!currentMapId) {
+    showScreen("mapselect");
+    return;
+  }
+
+  startGame(currentMapId);
+};

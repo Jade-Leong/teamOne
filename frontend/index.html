@@ -170,26 +170,50 @@
 
     <!-- MAP SELECT -->
   <div id="mapselect" class="screen">
-    <div class="top-bar">
-      <button class="back-btn" onclick="showScreen('landing')">Back</button>
-    </div>
+  <button class="map-back-btn" onclick="showScreen('landing')">Back</button>
+
+  <div class="map-title-box">
     <h1>Select a Map</h1>
-    <div class="map-select-grid">
-     <button class="map-card" onclick="startGame(1)">
+  </div>
+
+  <p class="map-subtitle">✦ Choose your adventure ✦</p>
+
+  <div class="map-select-grid">
+    <button class="map-card" onclick="startGame(1)">
       <div class="map-img-container">
         <img src="assets/map1.png" alt="World 1">
       </div>
-      <span class="map-label">World 1</span>
+      <div class="map-card-label">New York City Map</div>
     </button>
 
-      <button class="map-card" onclick="startGame(2)">
+    <button class="map-card locked" onclick="alert('Coming soon!')">
       <div class="map-img-container">
-        <img src="assets/map_blurred_v2.png" alt="World 2">
+        <img src="assets/map_blurred_v2.png" alt="Forest">
       </div>
-      <span class="map-label">Coming soon...</span>
+      <div class="map-card-label">🌲 Forest</div>
+      <p>Coming soon...</p>
     </button>
+  </div>
+
+  <div class="map-tip">
+    🐾 Every map has new challenges and high scores to beat!
+  </div>
+</div>
+
+
+<div id="gameover" class="screen">
+  <div class="gameover-overlay">
+    <h1 class="gameover-title">GAME OVER</h1>
+
+    <div class="gameover-buttons">
+      <button onclick="restartGame()">TRY AGAIN</button>
+      <button onclick="showScreen('mapselect')">SELECT MAP</button>
+      <button onclick="showScreen('landing')">MAIN MENU</button>
     </div>
   </div>
+</div>
+
+
   </main>
 
 
