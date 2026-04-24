@@ -38,6 +38,7 @@ window.addEventListener("message", async (event) => {
 
   frame.src = "";
 
+  document.getElementById("final-time-box").textContent = `You lasted ${finalTime}`;
   showScreen("gameover");
 
 });
