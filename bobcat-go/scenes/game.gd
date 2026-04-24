@@ -3,11 +3,12 @@ extends Node2D
 const OBSTACLES = [
 	preload("res://scenes/obstacle_trashcan.tscn"),
 	preload("res://scenes/obstacle_pigeon.tscn"),
+	preload("res://scenes/obstacle_taxi.tscn"),
 ]
 const RUN_STARTED_MESSAGE := "window.parent.postMessage({ type: 'bobcat-go:run-started' }, '*');"
 
 @export var spawn_x: float = 1400.0
-var spawn_positions = [235.0, -70]  # trashcan, pigeon
+var spawn_positions = [235.0, -70, 235]  # trashcan, pigeon, taxi
 
 var timer: float = 1.9
 var spawn_interval: float = 2.0
