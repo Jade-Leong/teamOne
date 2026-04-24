@@ -26,10 +26,18 @@ window.addEventListener("message", async (event) => {
   }
 
   hasSavedCurrentRun = true;
+  
+  const durationMs = event.data.durationMs;
+  const finalTime = formatDuration(durationMs);
+
+  alert(`You lasted ${finalTime}`);
+
   await saveRun({
     startedAt: currentRunStartedAt,
-    score: event.data.score,
+    durationMs: durationMs,
+    mapId: currentMapId,
   });
+
 });
 
 function startGame(mapId) {
@@ -50,4 +58,13 @@ function exitGame() {
   hasSavedCurrentRun = false;
 
   showScreen("mapselect");
+}
+
+function formatDuration(durationMs) {
+  const totalSeconds = Math.floor(durationMs / 1000);
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  const milliseconds = Math.floor((durationMs % 1000) / 10);
+
+  return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}.${String(milliseconds).padStart(2, "0")}`;
 }

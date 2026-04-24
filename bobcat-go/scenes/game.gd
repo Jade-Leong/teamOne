@@ -57,8 +57,9 @@ func end_run():
 	var final_time = format_time(elapsed_time)
 
 	print("Run ended:", final_time)
-
+	
 	if OS.has_feature("web"):
-		JavaScriptBridge.eval("window.parent.finishRunFromGodot(" + str(duration_ms) + ");")
+		JavaScriptBridge.eval("window.parent.postMessage({ type: 'bobcat-go:game-over', durationMs: %d }, '*');" % duration_ms)
 
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+	
