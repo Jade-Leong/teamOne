@@ -51,11 +51,9 @@ func _physics_process(delta: float) -> void:
 func die() -> void:
 	if is_dead:
 		return
+
 	is_dead = true
-	if OS.has_feature("web"):
-		var elapsed_ms: int = max(0, Time.get_ticks_msec() - run_started_at_ms)
-		var score: int = int(round(float(elapsed_ms) / 1000.0))
-		JavaScriptBridge.eval(
-			"window.parent.postMessage({ type: 'bobcat-go:game-over', score: %d }, '*');" % score
-		)
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/game_over.tscn")
+
+	var game = get_parent()
+	if game and game.has_method("end_run"):
+		game.end_run()
