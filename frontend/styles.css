@@ -1,3 +1,172 @@
+/* FULL SCREEN BACKGROUND */
+#landing {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  background: url("assets/opening_page.png") no-repeat center center;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-logo-img {
+  position: absolute;
+  top: 120px;
+  left: 200px;
+
+  width: 600px; /* adjust if needed */
+  
+  image-rendering: pixelated;
+
+  z-index: 2;
+}
+
+/* DARK OVERLAY (optional for readability) */
+#landing {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url("assets/opening_page.png") no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* big arcade title */
+.start-logo {
+  position: absolute;
+  top: 70px;
+  left: 90px;
+
+  font-family: 'Press Start 2P', cursive;
+  font-size: 58px;
+  line-height: 1.25;
+
+  color: #fff8d6;
+  text-shadow:
+    6px 6px 0 #000,
+    10px 10px 0 #8b5cf6;
+
+  z-index: 2;
+}
+
+/* right side menu */
+.start-menu {
+  position: absolute;
+  top: 210px;
+  right: 110px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  z-index: 2;
+}
+
+.start-menu input {
+  width: 360px;
+  padding: 18px 20px;
+
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  text-align: center;
+
+  color: #3f2e7a;
+  background: #e6dcff;
+
+  border: 5px solid #2b1f5c;
+  box-shadow: 6px 6px 0 #000;
+
+  outline: none;
+}
+
+.start-btn {
+  width: 400px;
+  padding: 22px 20px;
+
+  font-family: 'Press Start 2P', cursive;
+  font-size: 18px;
+
+  color: white;
+  background: #8e7cff;
+
+  border: 5px solid #2b1f5c;
+  box-shadow: 7px 7px 0 #000;
+
+  cursor: pointer;
+}
+
+.start-btn:hover {
+  background: #a99cff;
+  transform: translateY(-3px);
+}
+
+.start-btn:active {
+  transform: translateY(3px);
+  box-shadow: 3px 3px 0 #000;
+}
+
+.start-btn.secondary {
+  background: #5f4bb6;
+}
+
+.switch-auth-text {
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 9px;
+  color: white;
+  text-shadow: 3px 3px 0 #000;
+}
+
+.switch-auth-text button {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 9px;
+
+  color: #ffe680;
+  background: none;
+  border: none;
+
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.overlay-ui {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.main-logo {
+  width: 400px;
+  image-rendering: pixelated;
+  margin-bottom: 40px;
+}
+
+/* retro buttons */
+.menu-buttons button {
+  display: block;
+  margin: 12px auto;
+  padding: 12px 24px;
+
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+
+  background: #8e7cff;
+  border: 4px solid #3f2e7a;
+  color: white;
+
+  cursor: pointer;
+
+  image-rendering: pixelated;
+}
+
+.menu-buttons button:hover {
+  background: #a99cff;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -41,20 +210,7 @@ body::before {
   pointer-events: none;
 }
 
-.screen {
-  display: none;
-  width: 640px;
-  background: var(--purple);
-  border: 4px solid #5a4fa0;
-  box-shadow: 8px 8px 0 #3d3570, inset 0 0 0 2px rgba(255, 255, 255, 0.1);
-  padding: 32px 40px 40px;
-  position: relative;
-  animation: fadeIn 0.2s ease;
-}
 
-.screen.active {
-  display: block;
-}
 
 #game.active {
   display: flex;
@@ -144,6 +300,60 @@ body::before {
   text-align: center;
   transition: transform 0.08s, box-shadow 0.08s;
   width: 100%;
+}
+
+/* INPUT BOX */
+.auth-box {
+  margin-bottom: 25px;
+}
+
+.auth-box input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 260px;
+
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+
+  background: #dcd6ff;
+  border: 3px solid #3f2e7a;
+  color: #2b1f5c;
+
+  text-align: center;
+  outline: none;
+
+  image-rendering: pixelated;
+}
+
+/* BUTTONS */
+.menu-buttons button {
+  display: block;
+  margin: 10px auto;
+  padding: 12px 20px;
+  width: 260px;
+
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+
+  background: #8e7cff;
+  border: 4px solid #3f2e7a;
+  color: white;
+
+  cursor: pointer;
+  transition: 0.15s;
+
+  image-rendering: pixelated;
+}
+
+.menu-buttons button:hover {
+  background: #a99cff;
+  transform: translateY(-2px);
+}
+
+/* OPTIONAL: selected/active feel */
+.menu-buttons button:active {
+  transform: translateY(2px);
 }
 
 .auth-btns {
@@ -490,11 +700,25 @@ body::before {
 }
 
 .screen {
-  display: none;
+  display: none !important;
 }
 
 .screen.active {
-  display: block;
+  display: block !important;
+}
+
+#landing.screen.active {
+  display: block !important;
+}
+
+#landing:not(.active) {
+  display: none !important;
+}
+
+#mapselect.screen.active {
+  display: block !important;
+  position: relative;
+  z-index: 10;
 }
 
 

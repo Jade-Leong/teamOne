@@ -88,6 +88,17 @@ async function goSignIn() {
 
   currentUserId = data.user?.id;
   showScreen("mapselect");
+
+  currentUserId = data.user?.id;
+
+  if (!currentUserId) {
+    alert("Signed in, but no user ID returned.");
+    return;
+  }
+
+console.log("signed in user:", currentUserId);
+showScreen("mapselect");
+
 }
 
 // Save the finished run when the Godot iframe reports a game over.

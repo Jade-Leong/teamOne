@@ -3,9 +3,27 @@
 let currentUser = '';
 
 function showScreen(id) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-}
+  //document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  //document.getElementById(id).classList.add('active');
+
+
+  //function showScreen(id) {
+  console.log("showing screen:", id);
+
+  document.querySelectorAll(".screen").forEach(s => {
+    s.classList.remove("active");
+  });
+
+  const nextScreen = document.getElementById(id);
+
+  if (!nextScreen) {
+    console.error("No screen found with id:", id);
+    return;
+  }
+
+  nextScreen.classList.add("active");
+};
+
 
 function selectMap(btn) {
   document.querySelectorAll('.map-btn').forEach(b => b.classList.remove('selected'));
@@ -34,3 +52,36 @@ function updateLeaderboard() {
 function goBack() {
   showScreen('mapselect');
 }
+
+
+
+let isSignUpMode = true;
+
+function handleAuth() {
+  if (isSignUpMode) {
+    goSignUp();
+  } else {
+    goSignIn();
+  }
+}
+
+function switchAuthMode() {
+  const mainAuthBtn = document.getElementById("main-auth-btn");
+  const authText = document.getElementById("auth-text");
+  const switchAuthBtn = document.getElementById("switch-auth-btn");
+
+  if (isSignUpMode) {
+    isSignUpMode = false;
+
+    mainAuthBtn.textContent = "SIGN IN";
+    authText.textContent = "Need an account?";
+    switchAuthBtn.textContent = "Sign up";
+  } else {
+    isSignUpMode = true;
+
+    mainAuthBtn.textContent = "SIGN UP";
+    authText.textContent = "Already have an account?";
+    switchAuthBtn.textContent = "Sign in";
+  }
+}
+
