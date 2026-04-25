@@ -915,6 +915,8 @@ body::before {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("assets/background-map\ selection.png");
+
 
   width: 100%;
   height: 100%;
