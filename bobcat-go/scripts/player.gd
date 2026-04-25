@@ -5,6 +5,12 @@ const GRAVITY_MULTIPLIER = 2.5
 const COYOTE_TIME := 0.1
 const MAX_JUMPS := 2
 
+const BASE_FPS := 30.0
+const MAX_FPS := 60.0
+const RAMP_DURATION := 60.0
+
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+
 var is_dead := false
 var run_started_at_ms: int = 0
 var coyote_timer := 0.0
@@ -16,6 +22,12 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if is_dead:
 		return
+	
+	# Animation speed ramp (30 fps → 60 fps over RAMP_DURATION seconds)
+	var elapsed: float = (Time.get_ticks_msec() - run_started_at_ms) / 1000.0
+	var t: float = clamp(elapsed / RAMP_DURATION, 0.0, 1.0)
+	var current_fps: float = lerp(BASE_FPS, MAX_FPS, t)
+	sprite.speed_scale = current_fps / BASE_FPS
 	
 	# Gravity + coyote time tracking
 	if not is_on_floor():
@@ -53,7 +65,6 @@ func die():
 		return
 	is_dead = true
 	get_node("/root/Game").end_run()
-
 	var game = get_parent()
 	if game and game.has_method("end_run"):
 		game.end_run()
