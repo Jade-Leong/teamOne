@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cvlljkyewh3s6" path="res://scenes/game.gd" id="1_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://d0u58nei658fr" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://bb68wtl1nrb2p" path="res://scenes/city_background.gd" id="2_lnu2h"]
-[ext_resource type="Texture2D" uid="uid://btisvfgvi8otn" path="res://assets/Sprites/NYC_Background.png" id="3_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://bntubl6ehclt7" path="res://scenes/map1V2.png" id="3_lbhrr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbhrr"]
 distance = -11.0
@@ -27,7 +27,7 @@ script = ExtResource("2_lnu2h")
 
 [node name="City Background" type="Sprite2D" parent="ParallaxBackground/CityBackground" unique_id=1058074586]
 scale = Vector2(1, 1.0015625)
-texture = ExtResource("3_lnu2h")
+texture = ExtResource("3_lbhrr")
 centered = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=304565821]
