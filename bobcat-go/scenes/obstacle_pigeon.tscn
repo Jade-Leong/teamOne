@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://cb8ew3eigy4f" path="res://assets/Sprites/Pigeon_2.png" id="3_tddo7"]
 [ext_resource type="Texture2D" uid="uid://djexq7upvld0t" path="res://assets/Sprites/Pigeon_3.png" id="4_p6g1j"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p57ef"]
-size = Vector2(137.50009, 142.37508)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7jq5y"]
+radius = 38.0
+height = 122.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v7vb3"]
 animations = [{
@@ -32,9 +33,9 @@ script = ExtResource("1_0fdnf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=125919745]
 position = Vector2(796.00006, 505.00003)
 scale = Vector2(0.9999997, 0.9999997)
-shape = SubResource("RectangleShape2D_p57ef")
+shape = SubResource("CapsuleShape2D_7jq5y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1343785475]
-position = Vector2(791.00006, 503.00006)
+position = Vector2(796.00006, 506.00003)
 scale = Vector2(0.35852507, 0.3316898)
 sprite_frames = SubResource("SpriteFrames_v7vb3")
