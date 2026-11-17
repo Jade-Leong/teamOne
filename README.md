@@ -1,6 +1,6 @@
 # teamOne
 
-Bobcat Go is a static frontend plus a Godot web export. The app uses Supabase for
+Bobcat Go, https://team-one-black.vercel.app/, is a static frontend plus a Godot web export. The app uses Supabase for
 email/password auth and to save completed runs.
 
 ## Shared Supabase Setup
